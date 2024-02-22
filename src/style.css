@@ -2,6 +2,9 @@ body {
   background-color: rgba(0, 102, 255, 0.664);
   font-family: PT serif;
 }
+a {
+  color: rgb(6, 49, 192);
+}
 img {
   display: block;
   margin: 0 auto;
@@ -14,6 +17,10 @@ img {
   border-radius: 16px;
   padding: 30px;
 }
+header {
+  border-bottom: 1px solid #f9f7fe;
+  padding: 0 0 30px 0;
+}
 .search-form-input {
   background-color: #f9f7fe;
   border: none;
@@ -24,14 +31,21 @@ img {
 }
 .search-form-input {
   background: aqua;
-  padding: 15px 20px;
+  padding: 15px 30px;
   border: none;
+  margin-left: 5px;
   border-radius: 6px;
   color: white;
+  font-size: 16px;
 }
-header {
-}
+
 main {
 }
 footer {
+  border-top: 1px solid #f9f7fe;
+  padding: 30px 0 0 0;
+  text-align: center;
+
+  font-size: 12px;
+  color: gray;
 }
