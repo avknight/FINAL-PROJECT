@@ -1,20 +1,20 @@
 function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
-
-  console.log(response.data.temperature.console);
+  let temperature = response.data.temperature.current;
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.city;
+  temperatureElement.innerHTML = Math.round(temperature);
 }
 
 function searchCity(city) {
-  let apikey = "9t5b364c049odb68c86a10ac1444f04e";
-  let apiurl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}&unit=metric`;
-  axios.get(apiurl).then(refreshWeather);
+  let apiKey = "9t5b364c049odb68c86a10ac1444f04e";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&unit=metric`;
+  axios.get(apiUrl).then(refreshWeather);
 }
 
 function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
-  let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = searchInput.value;
   searchCity(searchInput.value);
 }
 
