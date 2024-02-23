@@ -54,10 +54,14 @@ main {
 .weather-app-details {
   font-size: 16px;
   color: rgba(39, 33, 66, 0.4);
-  line-height: 20px;
+  line-height: 24px;
+  font-weight: 500;
 }
 .weather-app-details strong {
   color: red;
+}
+.weather-app-temperature-container {
+  display: flex;
 }
 footer {
   border-top: 1px solid #f9f7fe;
