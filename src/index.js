@@ -9,17 +9,31 @@ function refreshWeather(response) {
   let date = new Date(response.data.time * 1000);
 
   cityElement.innerHTML = response.data.city;
-  timeElement.innerHTML = `${data.getDay()}:${data.getHours()}:${data.getMinutes()}`;
+  timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windspeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
 }
 function formatDate(date) {
-  let day = date.getDay();
   let minutes = date.getMinutes();
   let hours = date.getHours();
-  return "Tuesday 18.48";
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wenesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${day} ${hours}:${minutes}, `;
 }
 
 function searchCity(city) {
