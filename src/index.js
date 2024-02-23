@@ -5,12 +5,21 @@ function refreshWeather(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windspeedElement = document.querySelector("#wind-speed");
+  let timeElement = document.querySelector("#time");
+  let date = new Date(response.data.time * 1000);
 
   cityElement.innerHTML = response.data.city;
+  timeElement.innerHTML = `${data.getDay()}:${data.getHours()}:${data.getMinutes()}`;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windspeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
+}
+function formatDate(date) {
+  let day = date.getDay();
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  return "Tuesday 18.48";
 }
 
 function searchCity(city) {
