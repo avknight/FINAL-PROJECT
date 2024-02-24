@@ -54,3 +54,18 @@ let searchFormelement = document.querySelector("#search-form");
 searchFormelement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Toronto");
+
+let forcast = document.querySelector("#forecast");
+
+forcast.innerHTML = `
+  <div class="weather-forcast-day">
+    <div class="weather-forcast-date">Thur</div>
+    <div class="weather-forcast-icon">🌤️</div>
+    <div class="weather-forcast-temperatures">
+      <div class="weather-forcast-temperature">
+        <strong>18°</strong>
+      </div>
+      <div class="weather-forcast-temperature">12°</div>
+    </div>
+  </div>
+`;
